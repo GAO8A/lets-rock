@@ -4,7 +4,7 @@ Meteor.subscribe("sites");
 
 
 //Easy Search
-Sites.initEasySearch(['SiteName', 'SiteID']);
+Sites.initEasySearch(['siteID','SiteName']);
 
 
 Template.navigation.helpers({

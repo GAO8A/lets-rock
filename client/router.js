@@ -20,20 +20,28 @@ Router.route('/about', function(){
 
 // About page router
 Router.route('/site_list', function(){
-	this.render('site_list');
+	this.render('site_list',{
+		data: function(){
+			return Sites.find();
+		}
+	});
 });
 
 
 // Dynamic Router for each site.
 Router.route('/:_site',function(){
+
 	
 	this.render('site_view',{
 		data: function(){
 		var currentSite = this.params._site;
 		return Sites.findOne({ siteID: currentSite });	
 		}
+		
 	});
-});
+}
+
+);
 
 
 //TODO: figure out how to load google maps only for only Main view and site_view

@@ -1,5 +1,87 @@
 <template name="site_list">
-	
-	<h1>Site List</h1>
+	<div class="col-md-12">
+		<section class="list_view">
+		<ul>
+			<h3>Filter By:</h3>
+			<!-- Single button -->
+			<div class="btn-group">
+  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Location 
+    		<span class="caret"></span>
+  			</button>
+  			<ul class="dropdown-menu">
+    			<li><a href="#">North</a></li>
+    			<li><a href="#">East</a></li>
+    			<li><a href="#">South</a></li>
+    			<li><a href="#">West</a></li>
+  			</ul>
+			</div>
+			
+			<!-- Single button -->
+			<div class="btn-group">
+  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Category 
+    		<span class="caret"></span>
+  			</button>
+  			<ul class="dropdown-menu">
+    			<li><a href="#"></a></li>
+    			<li><a href="#"></a></li>
+    			<li><a href="#"></a></li>
+    			<li role="separator" class="divider"></li>
+    			<li><a href="#"></a></li>
+  			</ul>
+			</div>
 
+			<div class="btn-group topsites">
+  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Top Sites 
+    		<span class="caret"></span>
+  			</button>
+  			<ul class="dropdown-menu">
+    			<li><a class="yes" href="#">Yes</a></li>
+    			<li role="separator" class="divider"></li>
+    			<li><a class="no" href="#">No</a></li>
+  			</ul>
+			</div>
+			
+			<!-- Single button -->
+			<div class="btn-group sview">
+  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		StreetView
+    		<span class="caret"></span>
+  			</button>
+  			<ul class="dropdown-menu">
+    			<li><a class="yes" href="#">Yes</a></li>
+    			<li role="separator" class="divider"></li>
+    			<li><a class="no" href="#">No</a></li>
+  			</ul>
+			</div>
+			<button type="button" class="btn btn-primary reset">Reset</button>
+
+		</ul>
+
+		
+      	{{#each sites}}
+      	<a href="/{{siteID}}">
+      	
+		<div class="panel panel-default">
+  		<div class="panel-heading"><span>{{siteID}} </span>{{SiteName}}</div>
+  			<div class="panel-body">
+  				{{#if SubTitle}}
+    			{{SubTitle}}
+    			{{else}}
+    		<div class="desc">
+    	
+    		{{{Desc}}}
+    		</div>
+    		{{/if}}
+  			</div>
+		</div>
+      	</a>	
+      	{{/each}}
+
+
+
+		</section>
+	</div>
 </template>
