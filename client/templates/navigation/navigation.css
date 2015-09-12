@@ -13,18 +13,22 @@ nav.navbar {
 
 .navbar-header {
 	background-color: #00d2ff;
-  	border-color: #009aff;
+  border-color: #009aff;
 }
 
 
 .navbar-default {
+  width:100%;
 	background-color: #00d2ff;
-  	border-bottom: 4px solid #009aff; 
+  border-bottom: 4px solid #79E8FF; 
+  border-right: 4px solid #79E8FF; 
+  border-radius: 5px;
 }
 
 .outer {
 	position:relative;
-	border-bottom: 2px solid #F0F0F0;
+	border-bottom: 1px solid #CCF7FF;
+  border-radius: 5px;
 }
 
 .navbar-default .navbar-text {

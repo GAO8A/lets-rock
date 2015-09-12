@@ -53,18 +53,6 @@ Template.map.onCreated(function() {
 
 
 
-      //if (info.categ()== 1) {
-
-      //} else if (info.categ()==2) {
-
-      //} else if () {
-
-      //} else if () {
-
-      //} else {
-
-      //}
-
       var latlng = new google.maps.LatLng(info.Lat,info.Lon);
 
       if (info.Categ == '1') {
