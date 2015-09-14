@@ -1,5 +1,6 @@
 .carousel {
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
+    border: #79E8FF solid 2px;
 }
 /* Since positioning the image, we need to help out the caption */
  .carousel-caption {
@@ -12,4 +13,8 @@
         font-size: 21px;
         line-height: 1.4;
     }
+}
+
+.carousel-holder {
+    margin-top:6em;
 }

@@ -4,8 +4,6 @@ Meteor.subscribe("sites");
 
 var marker = {};
 
-// light map style
-var styles = [{"featureType":"administrative.locality","elementType":"all","stylers":[{"hue":"#2c2e33"},{"saturation":7},{"lightness":19},{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"simplified"}]},{"featureType":"poi","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":-100},{"lightness":100},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"hue":"#bbc0c4"},{"saturation":-93},{"lightness":31},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"hue":"#bbc0c4"},{"saturation":-93},{"lightness":31},{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"hue":"#bbc0c4"},{"saturation":-93},{"lightness":-2},{"visibility":"simplified"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"hue":"#e9ebed"},{"saturation":-90},{"lightness":-8},{"visibility":"simplified"}]},{"featureType":"transit","elementType":"all","stylers":[{"hue":"#e9ebed"},{"saturation":10},{"lightness":69},{"visibility":"on"}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#e9ebed"},{"saturation":-78},{"lightness":67},{"visibility":"simplified"}]}];
 
 Template.map.helpers({
   main_map_options: function() {
@@ -28,11 +26,13 @@ Template.map.helpers({
 
 Template.map.onCreated(function() {
   // We can use the `ready` callback to interact with the map API once the map is ready.
-
-  
+  var self = this;
+  //burles 
 
   GoogleMaps.ready('main_map', function(map) {
-
+    
+    var marker;
+    //burles
    
     console.log('Main Map ready');
 
@@ -52,40 +52,39 @@ Template.map.onCreated(function() {
         });
 
 
-
       var latlng = new google.maps.LatLng(info.Lat,info.Lon);
 
       if (info.Categ == '1') {
-        var icon = {
-          url: "/assets/markers/fr.png",
+        var image = {
+          url: "assets/markers/fr.png",
           scaledSize: new google.maps.Size(20,20),
           //origin: new google.maps.Point(0,0),
           //anchor: new google.maps.Point(anchor_left, anchor_top)
           };
         } else if(info.Categ == '2') {
-            var icon = {
-              url: "/assets/markers/br.png",
+            var image = {
+              url: "assets/markers/br.png",
               scaledSize: new google.maps.Size(20,20),
               //origin: new google.maps.Point(0,0),
-            //anchor: new google.maps.Point(anchor_left, anchor_top)
+              //anchor: new google.maps.Point(anchor_left, anchor_top)
               };
         } else if(info.Categ == '3') {
-            var icon = {
-              url: "/assets/markers/er.png",
+            var image = {
+              url: "assets/markers/er.png",
               scaledSize: new google.maps.Size(20,20),
               //origin: new google.maps.Point(0,0),
               //anchor: new google.maps.Point(anchor_left, anchor_top)
               };
         } else if(info.Categ == '4') {
-            var icon = {
-              url: "/assets/markers/hr.png",
+            var image = {
+              url: "assets/markers/hr.png",
               scaledSize: new google.maps.Size(20,20),
               //origin: new google.maps.Point(0,0),
               //anchor: new google.maps.Point(anchor_left, anchor_top)
               };
         } else if (info.Categ == '5') {
-            var icon = {
-              url: "/assets/markers/dr.png",
+            var image = {
+              url: "assets/markers/dr.png",
               scaledSize: new google.maps.Size(20,20),
               //origin: new google.maps.Point(0,0),
               //anchor: new google.maps.Point(anchor_left, anchor_top)
@@ -94,7 +93,7 @@ Template.map.onCreated(function() {
 
       var marker = new google.maps.Marker({
         position: latlng,
-        icon:icon,
+        icon:image,
         map: map.instance,
       }); 
 
