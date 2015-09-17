@@ -6,10 +6,32 @@
 
 .SiteViewInfoContainer{
 	padding: 1em;
-
-
 }
+
 
 h1 {
 	text-transform: uppercase;
+	color: #ffffff;
+  	font-family: arial;
+  	font-weight: 400;
 }
+h2 {
+	color: #ffffff;
+  	font-family: arial;
+  	font-weight: 400;
+}
+p {
+	color: #ffffff;
+  	font-family: arial;
+  	font-weight: 400;
+  	font-size:1em;
+}
+
+.row {
+	background-color: #00CDF9;
+	border-radius: 5px;
+}
+
+
+
+

@@ -12,6 +12,18 @@ Router.route('/', function(){
 });
 
 
+// image
+Router.map(function(){
+	this.route('/public'), {
+		path: '/public/:path(*)',
+		action: function() {
+			var path = this.params.path;
+			this.response.sendfile(path);
+		}
+	}
+});
+
+
 // About page router
 Router.route('/about', function(){
 	this.render('about');
